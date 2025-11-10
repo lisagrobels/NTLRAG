@@ -1,0 +1,281 @@
+{
+  "topic_id": "0",
+  "query": "biden the you of to and is he for that",
+  "documents_bm25": [
+    {
+      "metadata": {
+        "topic": "0"
+      },
+      "page_content": "you realize joe biden is the current president right?",
+      "type": "Document"
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "You guys are hard to satisfy. First you all say Biden is too old and senile, now that he drops out of the race, again you are displeased. Make up your minds. Please.",
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "if biden dropped out does that mean the trump x biden edits to chappell songs have to end?",
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "when it was announced he was dropping out, joe biden shit his depends and when he found out he was not going to seek reelection, he was very upset",
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "absolutely insane to me that people are on here saying biden shouldn't have dropped out or calling it heartbreaking that he did like literally what about this campaign has made him seem remotely qualified for a second term",
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "Are you fucking braindead? Without biden none of this would have been possible. Ho could've ended it every moment. No Palestinian child had to be killed if it wasn't for him. He is the most responsible person for this genocide",
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "President Biden is the most descent, honorable and capable President, that America has seen in the last 2 decades! Thank you Mr. President for your service and for your love of Country! You make me feel proud to be an American.",
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "Biden sniffs kids. Why does he do that you think?",
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "Who is currently in charge of the United States of America? If Biden is unfit to run for reelection, how is he fit to run the country? Like and RT mine instead of Ian's since he's not even American.",
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "RIP to all of the biden fan accounts",
+      "type": null
+    }
+  ],
+  "documents_chroma": [
+    {
+      "id": "74e52ea4-7f09-4d46-9ed4-898d21609f1e",
+      "metadata": {
+        "seq_num": 33,
+        "published_date": "Fri, 19 Jul 2024 07:00:00 GMT",
+        "publisher_title": "Louisiana Illuminator",
+        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json"
+      },
+      "page_content": "Louisiana Democrats put up no challenger to U.S. House Speaker Mike Johnson  Louisiana Illuminator",
+      "type": null
+    },
+    {
+      "id": "295cdb98-c2a3-4a38-a269-5574e1b52dd2",
+      "metadata": {
+        "seq_num": 46,
+        "published_date": "Sat, 20 Jul 2024 07:00:00 GMT",
+        "publisher_title": "Iowa Capital Dispatch",
+        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json"
+      },
+      "page_content": "Big data, social media and artificial intelligence will poison the 2024 election  Iowa Capital Dispatch",
+      "type": null
+    },
+    {
+      "id": "44473838-c454-4202-b705-d9e4f71c71a2",
+      "metadata": {
+        "seq_num": 94,
+        "publisher_title": "UMSL Blogs",
+        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+        "published_date": "Mon, 22 Jul 2024 07:00:00 GMT"
+      },
+      "page_content": "UMSL political scientists researching pressures faced by local election officials and decisions to remain in their roles  UMSL Blogs",
+      "type": null
+    },
+    {
+      "id": "be060def-2c49-407a-9f0f-0da05f697e3c",
+      "metadata": {
+        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+        "publisher_title": "Indiana Capital Chronicle",
+        "seq_num": 28,
+        "published_date": "Thu, 18 Jul 2024 07:00:00 GMT"
+      },
+      "page_content": "Recount results for races still not certified over two months after primary election  Indiana Capital Chronicle",
+      "type": null
+    },
+    {
+      "id": "d3ad3f1c-862e-44f5-a212-740f8ac8ba0e",
+      "metadata": {
+        "seq_num": 41,
+        "publisher_title": "League of Women Voters",
+        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+        "published_date": "Fri, 19 Jul 2024 07:00:00 GMT"
+      },
+      "page_content": "Colorado Montana Wyoming State Area Conference of the NAACP v. United States Election Integrity Plan  League of Women Voters",
+      "type": null
+    }
+  ],
+  "narratives": [],
+  "grade_result": {
+    "grade": "approved",
+    "explanation": "The narrative is consistent with the context. The user expresses strong support for Joe Biden, who is mentioned in multiple news articles from 2024, including Louisiana Democrats putting up no challenger to U.S. House Speaker Mike Johnson and Big data, social media and artificial intelligence will poison the 2024 election."
+  },
+  "approved_narratives": [
+    {
+      "narrative": {
+        "topic_id": null,
+        "actor": "user",
+        "action": "express opinion and make judgment",
+        "event": "Joe Biden dropping out of the race for reelection",
+        "description": "The user expresses strong support for Joe Biden as the current President of the United States"
+      },
+      "documents_bm25": [
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        }
+      ],
+      "documents_chroma": [
+        {
+          "id": null,
+          "metadata": {
+            "seq_num": null,
+            "published_date": null,
+            "publisher_title": null,
+            "source": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "id": null,
+          "metadata": {
+            "seq_num": null,
+            "published_date": null,
+            "publisher_title": null,
+            "source": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "id": null,
+          "metadata": {
+            "seq_num": null,
+            "publisher_title": null,
+            "source": null,
+            "published_date": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "id": null,
+          "metadata": {
+            "source": null,
+            "publisher_title": null,
+            "seq_num": null,
+            "published_date": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "id": null,
+          "metadata": {
+            "seq_num": null,
+            "publisher_title": null,
+            "source": null,
+            "published_date": null
+          },
+          "page_content": null,
+          "type": null
+        }
+      ]
+    }
+  ],
+  "pending_narratives_with_docs": {},
+  "refine_counts": {},
+  "topic_keywords": {}
+}

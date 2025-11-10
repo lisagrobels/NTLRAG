@@ -1,0 +1,38 @@
+[
+  {
+    "narrative": {
+      "topic_id": "0",
+      "actor": "user",
+      "action": "express opinion or criticism about Joe Biden's decision to drop out of the presidential race",
+      "event": "Joe Biden dropping out of the presidential race",
+      "description": "Some users criticize Joe Biden for his age and abilities, while others express admiration and support."
+    }
+  },
+  {
+    "narrative": {
+      "topic_id": "1",
+      "actor": "Joe Biden",
+      "action": "endorsed Kamala",
+      "event": "win the election",
+      "description": "Joe Biden endorsed Kamala Harris, but it's unlikely to change the outcome of the election."
+    }
+  },
+  {
+    "narrative": {
+      "topic_id": "2",
+      "actor": "user",
+      "action": "endorsed Kamla Harris as President and VP",
+      "event": "Presidential nomination",
+      "description": "Supporting Kamla Harris for President due to her job performance as border czar"
+    }
+  },
+  {
+    "narrative": {
+      "topic_id": "3",
+      "actor": "user",
+      "action": "endorsed",
+      "event": "race",
+      "description": "A user expresses support for a Biden-Harris or Harris-Buttigieg ticket"
+    }
+  }
+]

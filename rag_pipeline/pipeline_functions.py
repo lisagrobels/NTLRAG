@@ -1,36 +1,23 @@
-# general libraries
-import pandas as pd
+from settings import max_recursions
+from settings import max_refines
+from settings import output_dir
+from settings import ollama_version
+
 import numpy as np
 import json
-import traceback
-import threading
-import subprocess
-import time
-from enum import Enum
-from pathlib import Path
-from typing import List, Optional, Dict, Any
-from IPython.display import Markdown
-# pydantic
-from pydantic import BaseModel, Field
-from pydantic import TypeAdapter
-# langchain libraries, adjust for LLM and orchestration framework used used
-from langchain_ollama import ChatOllama
-from langchain_ollama import OllamaEmbeddings
-from langchain_community.vectorstores import Chroma
-from langchain_community.retrievers import BM25Retriever
-from langchain_community.document_loaders import JSONLoader
-from langchain.schema import Document
-from langchain.prompts import PromptTemplate
-from langchain.output_parsers import PydanticOutputParser
-from langchain_core.tools import tool
-from langchain_core.runnables import RunnableConfig
-from langgraph.graph import StateGraph, START, END
-
 from typing import List, Optional, Dict
-from pydantic import BaseModel, Field
-from pydantic import TypeAdapter
 from enum import Enum
+import traceback
+from pathlib import Path
+from typing import Any
 
+from pydantic import BaseModel, Field, ValidationError
+from pydantic import TypeAdapter
+
+from langchain_ollama import ChatOllama
+from langchain_core.documents import Document
+from langchain_core.runnables.config import RunnableConfig
+from langgraph.graph import StateGraph, END
 
 
 # Setup pydantic models and graph state models
@@ -72,14 +59,11 @@ class GraphState(BaseModel):
     refine_counts: Dict[str, int] = Field(default_factory=dict)
     topic_keywords: Dict[str, list[str]] = Field(default_factory=dict)
     
-
 # Setup LLMs
-llm = ChatOllama(model="llama3.2")
-llm_struct = ChatOllama(model='llama3.2').with_structured_output(Narrative, method='json_schema')
-llm_struct_merge = ChatOllama(model='llama3.2').with_structured_output(MergedNarratives, method='json_schema')
-llm_grader = ChatOllama(model='llama3.2').with_structured_output(GradedNarrative, method='json_schema')
-
-
+llm = ChatOllama(model=ollama_version)
+llm_struct = ChatOllama(model=ollama_version).with_structured_output(Narrative, method='json_schema')
+llm_struct_merge = ChatOllama(model=ollama_version).with_structured_output(MergedNarratives, method='json_schema')
+llm_grader = ChatOllama(model=ollama_version).with_structured_output(GradedNarrative, method='json_schema')
 
 # RETRIEVE
 def retrieve_node(state: GraphState) -> GraphState:
@@ -122,7 +106,7 @@ def extract_narrative(state: GraphState, max_attempts: int = 3) -> GraphState:
 
     while attempt < max_attempts:
         attempt += 1
-        print(f"🔄 Extract attempt {attempt} for topic {topic_id}...")
+        print(f" Extract attempt {attempt} for topic {topic_id}...")
 
         docs_text = "\n".join(get_page_content(doc) for doc in documents_bm25)
         combined_text = (f"""
@@ -163,7 +147,7 @@ def extract_narrative(state: GraphState, max_attempts: int = 3) -> GraphState:
             print("RAW LLM result:", result)
 
             if isinstance(result, dict) and is_blank_narrative(result):
-                print(f"⚠️ All narrative fields blank, retrying (attempt {attempt})...")
+                print(f" All narrative fields blank, retrying (attempt {attempt})...")
                 continue
 
             if isinstance(result, Narrative):
@@ -183,24 +167,25 @@ def extract_narrative(state: GraphState, max_attempts: int = 3) -> GraphState:
                 documents_chroma=documents_chroma
             )
 
-            updated_pending[topic_id] = narrative_with_docs
+            #updated_pending[topic_id] = narrative_with_docs
+            updated_pending[str(topic_id)] = narrative_with_docs
 
             return state.model_copy(update={
                 "pending_narratives_with_docs": updated_pending
             })
 
         except ValidationError as ve:
-            print(f"❌ Validation error parsing Narrative (attempt {attempt}): {ve}")
+            print(f" Validation error parsing Narrative (attempt {attempt}): {ve}")
             print("Raw LLM output:", result)
             last_error = ve
             last_raw_result = result
 
         except Exception as e:
-            print(f"❌ Unexpected error during extraction (attempt {attempt}): {e}")
+            print(f" Unexpected error during extraction (attempt {attempt}): {e}")
             last_error = e
             last_raw_result = result
 
-    print(f"❌ Failed to extract valid Narrative after {max_attempts} attempts. Last error: {last_error}")
+    print(f" Failed to extract valid Narrative after {max_attempts} attempts. Last error: {last_error}")
     # Fallback: use model_construct to create a partial Narrative and pass it on
     if last_raw_result:
         # fill missing fields with empty strings
@@ -234,8 +219,6 @@ def extract_narrative(state: GraphState, max_attempts: int = 3) -> GraphState:
 
     
 # GRADE (= VALIDATE)
-MAX_REFINES = 100
-
 def auto_grade_if_incomplete(narrative: Narrative) -> Optional[GradedNarrative]:
     required_fields = ["actor", "action", "event", "description"]
     missing = [field for field in required_fields if not getattr(narrative, field, "").strip()]
@@ -251,18 +234,19 @@ def auto_grade_if_incomplete(narrative: Narrative) -> Optional[GradedNarrative]:
 
 def grade_narrative(state: GraphState) -> GraphState:
     if not state.pending_narratives_with_docs:
-        print("⚠️ No pending narratives to grade.")
+        print(" No pending narratives to grade.")
         return state.model_copy(update={
             "pending_narratives_with_docs": {},
             "grade_result": None
         })
 
-    pending = state.pending_narratives_with_docs
+    #pending = state.pending_narratives_with_docs
+    pending = {str(k): v for k, v in (state.pending_narratives_with_docs or {}).items()}
 
     # Ensure topic_key is str for consistency
     topic_key = str(state.topic_id)
     if not isinstance(pending, dict) or topic_key not in pending:
-        print(f"❌ Invalid or missing pending narrative for topic {topic_key}: {pending}")
+        print(f" Invalid or missing pending narrative for topic {topic_key}: {pending}")
         return state.model_copy(update={
             "pending_narratives_with_docs": pending if isinstance(pending, dict) else {},
             "grade_result": None
@@ -272,7 +256,7 @@ def grade_narrative(state: GraphState) -> GraphState:
     narrative = narrative_with_docs.narrative
 
     # Log narrative fields, even if incomplete (for debugging)
-    print("📝 Narrative to grade (may be partial):", narrative)
+    print(" Narrative to grade (may be partial):", narrative)
 
     docs_combined = (
         (narrative_with_docs.documents_chroma or []) +
@@ -284,7 +268,7 @@ def grade_narrative(state: GraphState) -> GraphState:
     # Check for missing fields before calling the LLM
     graded = auto_grade_if_incomplete(narrative)
     if graded:
-        print(f"⚠️ Narrative is incomplete. Auto-graded as 'refine': {graded.explanation}")
+        print(f" Narrative is incomplete. Auto-graded as 'refine': {graded.explanation}")
     else:
         try:
             prompt = f"""
@@ -297,13 +281,13 @@ Start by assuming the narrative is **approved**. Change it to **refine** only if
 1. The narrative **contradicts** the context (i.e. directly conflicts).
 2. The narrative includes hallucinations (i.e. facts not present in the context).
 
-✅ Approve if:
+  Approve if:
 - The narrative is CONSISTENT with the context.
 - The narrative does not contradict the context (i.e. tells the opposite).
 - Approximate matches exist (e.g. "America" ≈ "US").
 - The actor is "user" (this is always valid and must be **approved** if other fields are valid).
 
-🧠 Do NOT:
+  Do NOT:
 - Guess or invent information.
 - Consider grammar, tone, or style.
 - Penalize narratives that are vague but not contradictory.
@@ -319,13 +303,13 @@ Narrative:
 {narrative}
 """
             graded_raw = llm_grader.invoke(prompt)
-            print("✅ Grading result:", graded_raw, flush=True)
+            print("Grading result:", graded_raw, flush=True)
             graded = (
                 graded_raw if isinstance(graded_raw, GradedNarrative)
                 else GradedNarrative.model_validate(graded_raw)
             )
         except Exception as e:
-            print(f"⚠️ Could not parse grading result into GradedNarrative: {e}", flush=True)
+            print(f" Could not parse grading result into GradedNarrative: {e}", flush=True)
             graded = None
 
     # Copy and prep state data
@@ -341,7 +325,7 @@ Narrative:
 
     elif graded and graded.grade == Grade.refine:
         refine_count += 1
-        if refine_count >= MAX_REFINES:
+        if refine_count >= max_refines:
             print(f"⚠️ Max refine attempts reached for topic {topic_key}, approving narrative.")
             approved_narratives.append(narrative_with_docs)
             refine_counts.pop(topic_key, None)
@@ -352,9 +336,9 @@ Narrative:
     else:
         # Invalid or missing grade — still increment refine count
         refine_count += 1
-        print(f"⚠️ Grading failed or incomplete, incrementing refine_count: {refine_count} for topic {topic_key}")
-        if refine_count >= MAX_REFINES:
-            print(f"⚠️ Max refine attempts reached (fallback) for topic {topic_key}, approving narrative.")
+        print(f" Grading failed or incomplete, incrementing refine_count: {refine_count} for topic {topic_key}")
+        if refine_count >= max_refines:
+            print(f" Max refine attempts reached (fallback) for topic {topic_key}, approving narrative.")
             approved_narratives.append(narrative_with_docs)
             refine_counts.pop(topic_key, None)
             pending_narratives_with_docs.pop(topic_key, None)
@@ -369,11 +353,12 @@ Narrative:
     })
 
 def refine_narrative(state: GraphState) -> GraphState:
+    global result
     topic_id = str(state.topic_id)
     documents_bm25 = state.documents_bm25 or []
     documents_chroma = state.documents_chroma or []
 
-    # 🔍 Include grading explanation if the last grade was 'refine'
+    # Include grading explanation if the last grade was 'refine'
     explanation_text = ""
     if state.grade_result and state.grade_result.grade == Grade.refine:
         reason = state.grade_result.explanation.strip()
@@ -383,7 +368,7 @@ def refine_narrative(state: GraphState) -> GraphState:
                 f"\"{reason}\"\n\n"
             )
 
-    # 🧠 Construct prompt with explanation and extraction instructions
+    # Construct prompt with explanation and extraction instructions
     docs_text = "\n".join(get_page_content(doc) for doc in documents_bm25)
     combined_text = (f"""
         You are a information extraction system.
@@ -436,7 +421,7 @@ def refine_narrative(state: GraphState) -> GraphState:
         print("Narrative after overwrite:", narrative)
 
     except ValidationError as ve:
-        print(f"❌ Validation error parsing Narrative (refine): {ve}")
+        print(f" Validation error parsing Narrative (refine): {ve}")
         print("Raw LLM output:", result)
         last_raw_result = result
         if isinstance(last_raw_result, dict):
@@ -454,7 +439,7 @@ def refine_narrative(state: GraphState) -> GraphState:
             )
 
     except Exception as e:
-        print(f"❌ Unexpected error during refinement: {e}")
+        print(f" Unexpected error during refinement: {e}")
         narrative = Narrative.model_construct(
             topic_id=topic_id, actor="", action="", event="", description=""
         )
@@ -493,11 +478,11 @@ def build_graph():
         # If narrative is approved, or no longer pending (force-approved or otherwise), we're done
         if (grade_result and grade_result.grade == Grade.approved) or \
            (not pending or topic_key not in pending):
-            print(f"🎉 Narrative approved or force-approved for topic {state.topic_id}.")
+            print(f" Narrative approved or force-approved for topic {state.topic_id}.")
             return END
 
         # Otherwise, keep refining
-        print(f"🔁 Refining narrative for topic {state.topic_id}...")
+        print(f" Refining narrative for topic {state.topic_id}...")
         return "refine"
 
     builder.add_conditional_edges("grade", route_after_grading, {
@@ -506,47 +491,6 @@ def build_graph():
     })
 
     return builder.compile()
-
-
-def safe_model_dump(obj, _seen=None):
-    """
-    Recursively serialize a Pydantic model or nested structures,
-    skipping non-serializable objects (like retrievers).
-    """
-    if _seen is None:
-        _seen = set()
-    obj_id = id(obj)
-    if obj_id in _seen:
-        return None  # prevent circular references
-    _seen.add(obj_id)
-
-    # Handle Pydantic BaseModel
-    if isinstance(obj, BaseModel):
-        return safe_model_dump(obj.model_dump(mode="python", by_alias=False), _seen)
-
-    # Handle dicts
-    elif isinstance(obj, dict):
-        result = {}
-        for k, v in obj.items():
-            dumped = safe_model_dump(v, _seen)
-            # Only include serializable items
-            if dumped is not None and isinstance(dumped, (dict, list, str, int, float, bool)):
-                result[k] = dumped
-        return result
-
-    # Handle lists
-    elif isinstance(obj, list):
-        return [safe_model_dump(i, _seen) for i in obj if i is not None]
-
-    # Handle basic types
-    elif isinstance(obj, (str, int, float, bool)) or obj is None:
-        return obj
-
-    # For anything else (like Chroma retriever), skip it
-    else:
-        return None
-
-
 
 def convert_numpy_types(obj, _seen=None):
     if _seen is None:
@@ -582,11 +526,16 @@ def get_page_content(doc):
     else:
         return str(doc)
 
-def run_narrative_extraction(topic_keywords: dict, output_dir: Path, bm25_retrievers: dict, chroma_retriever):
-    from langgraph.graph import END
-    
+config = RunnableConfig(recursion_limit=max_recursions)
+
+def run_narrative_extraction(topic_keywords: dict,
+                             output_dir: Path,
+                             bm25_retrievers: dict,
+                             chroma_retriever,
+                             config: RunnableConfig):
+
+    bm25_retrievers = {str(k): v for k, v in bm25_retrievers.items()}
     topic_keywords = {str(k): v for k, v in topic_keywords.items()}
-    output_dir.mkdir(exist_ok=True)
     
     graph = build_graph()
     all_approved_narratives = []
@@ -595,7 +544,7 @@ def run_narrative_extraction(topic_keywords: dict, output_dir: Path, bm25_retrie
 
     for topic_id, keywords in topic_keywords.items():
         try:
-            print(f"\n🚀 Processing topic {topic_id}...")
+            print(f"\n Processing topic {topic_id}...")
 
             initial_state = GraphState(
                 topic_id=topic_id,
@@ -606,7 +555,7 @@ def run_narrative_extraction(topic_keywords: dict, output_dir: Path, bm25_retrie
                 chroma_retriever=chroma_retriever
             )
 
-            final_state = graph.invoke(initial_state, {"recursion_limit": 500})
+            final_state = graph.invoke(initial_state, config)
 
             # Ensure final_state is a valid GraphState instance
             if not isinstance(final_state, GraphState):
@@ -623,36 +572,38 @@ def run_narrative_extraction(topic_keywords: dict, output_dir: Path, bm25_retrie
             # Step 3: Extract narratives
             approved_narratives = final_state.approved_narratives or []
 
-            # Step 4: JSON-safe output (detect circular refs only at this stage)
+            # Step 4: JSON-safe output (skip non-serializable retrievers)
             try:
-                result_dict = safe_model_dump(final_state)        # Handles nested BaseModels
-                result_dict = convert_numpy_types(result_dict)    # Handles NumPy types
+                # Use Pydantic's built-in serialization and exclude retrievers
+                result_dict = final_state.model_dump(
+                    mode="python",
+                    by_alias=False,
+                    exclude={"bm25_retrievers", "chroma_retriever"}
+                )
+
+                # Convert NumPy types or any other non-JSON types if needed
+                result_dict = convert_numpy_types(result_dict)
+
+                # Write to disk
                 with open(output_dir / f"topic_{topic_id}.json", "w") as f:
                     json.dump(result_dict, f, indent=2)
+
             except Exception as serialization_error:
-                print(f"⚠️ Failed to serialize topic {topic_id}: {serialization_error}")
+                print(f" Failed to serialize topic {topic_id}: {serialization_error}")
                 traceback.print_exc()
-
-
 
             topic_results[topic_id] = {
                 "approved_narratives": approved_narratives,
                 "final_state": final_state
             }
             all_approved_narratives.extend(approved_narratives)
-            print(f"✅ Topic {topic_id} done. {len(approved_narratives)} narrative(s) approved.")
+            print(f"Topic {topic_id} done. {len(approved_narratives)} narrative(s) approved.")
 
         except Exception as e:
-            print(f"❌ Error processing topic {topic_id}: {e}")
+            print(f" Error processing topic {topic_id}: {e}")
             traceback.print_exc()
 
-    # Save all approved narratives globally
-    approved_path = output_dir / "approved_narratives_global.json"
-    with open(approved_path, "w") as f:
-        json.dump(convert_numpy_types([
-            safe_model_dump(n) for n in all_approved_narratives
-        ]), f, indent=2)
-    print(f"📋 Saved {len(all_approved_narratives)} total approved narratives.")
-
     return all_approved_narratives, topic_results
+
+
 

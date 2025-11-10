@@ -1,0 +1,10 @@
+langchain
+pandas
+langchain-ollama
+langchain-chroma
+langchain-community
+chromadb
+torch
+rank-bm25
+langgraph
+jq

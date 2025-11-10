@@ -1,0 +1,281 @@
+{
+  "topic_id": "3",
+  "query": "harris biden in and state as difference critical visiting nc",
+  "documents_bm25": [
+    {
+      "metadata": {
+        "topic": "3"
+      },
+      "page_content": "After critical debate, Biden and Harris kept visiting swing state NC. What they did here.",
+      "type": "Document"
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": null,
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": null,
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "Literally only in this chat is voting for biden harris. ability to vote has destroyed this country.",
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "And the whole time I said it doesnt make a big difference. It makes a small difference, which can be important. You said that Harris has a good chance at winning. Thats a big difference from Biden, and all Im asking is where that big difference comes from.",
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "They tried to throw Trump in jail, failed. They tried to assassinate Trump 2 days before the RNC to throw it into chaos, it failed. Almost exactly a week later, they force Biden to exit race. The deep state is desperate, thats scary and dangerous. He endorses Harris as a to em",
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "Can't think of a single swing state where Harris improves from Biden.",
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "He does not play in the battleground Midwest states in my mind. Not as well as Biden, Harris, Whitmer, Pritzker and many others with cleaner labor records. No hunger for California guys there.",
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "Only one person could be as Retarded as Biden and in walks Kamal Toe, I love it on my knees Harris!!! Buahahahahaha good luck with that!",
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "I'm actually relieved. Biden did a good job but he's not as sharp as we need in a POTUS. A Harris/Buttigieg or Harris/Whitmer ticket would be awesome and unbeatable.",
+      "type": null
+    }
+  ],
+  "documents_chroma": [
+    {
+      "id": "44473838-c454-4202-b705-d9e4f71c71a2",
+      "metadata": {
+        "seq_num": 94,
+        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+        "published_date": "Mon, 22 Jul 2024 07:00:00 GMT",
+        "publisher_title": "UMSL Blogs"
+      },
+      "page_content": "UMSL political scientists researching pressures faced by local election officials and decisions to remain in their roles  UMSL Blogs",
+      "type": null
+    },
+    {
+      "id": "74e52ea4-7f09-4d46-9ed4-898d21609f1e",
+      "metadata": {
+        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+        "published_date": "Fri, 19 Jul 2024 07:00:00 GMT",
+        "seq_num": 33,
+        "publisher_title": "Louisiana Illuminator"
+      },
+      "page_content": "Louisiana Democrats put up no challenger to U.S. House Speaker Mike Johnson  Louisiana Illuminator",
+      "type": null
+    },
+    {
+      "id": "295cdb98-c2a3-4a38-a269-5574e1b52dd2",
+      "metadata": {
+        "published_date": "Sat, 20 Jul 2024 07:00:00 GMT",
+        "publisher_title": "Iowa Capital Dispatch",
+        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+        "seq_num": 46
+      },
+      "page_content": "Big data, social media and artificial intelligence will poison the 2024 election  Iowa Capital Dispatch",
+      "type": null
+    },
+    {
+      "id": "be060def-2c49-407a-9f0f-0da05f697e3c",
+      "metadata": {
+        "published_date": "Thu, 18 Jul 2024 07:00:00 GMT",
+        "seq_num": 28,
+        "publisher_title": "Indiana Capital Chronicle",
+        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json"
+      },
+      "page_content": "Recount results for races still not certified over two months after primary election  Indiana Capital Chronicle",
+      "type": null
+    },
+    {
+      "id": "a71f3795-f95d-487e-92b4-d9e52d2a5a3e",
+      "metadata": {
+        "published_date": "Fri, 19 Jul 2024 07:00:00 GMT",
+        "publisher_title": "Louisiana Illuminator",
+        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+        "seq_num": 34
+      },
+      "page_content": "Two Republicans, one Democrat to meet in Public Service Commission race  Louisiana Illuminator",
+      "type": null
+    }
+  ],
+  "narratives": [],
+  "grade_result": {
+    "grade": "approved",
+    "explanation": "The narrative is consistent with the context and does not contradict any information provided."
+  },
+  "approved_narratives": [
+    {
+      "narrative": {
+        "topic_id": null,
+        "actor": "user",
+        "action": "endorses",
+        "event": "race",
+        "description": "The author supports a Harris/Buttigieg or Harris/Whitmer ticket as an unbeatable option"
+      },
+      "documents_bm25": [
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        }
+      ],
+      "documents_chroma": [
+        {
+          "id": null,
+          "metadata": {
+            "seq_num": null,
+            "source": null,
+            "published_date": null,
+            "publisher_title": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "id": null,
+          "metadata": {
+            "source": null,
+            "published_date": null,
+            "seq_num": null,
+            "publisher_title": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "id": null,
+          "metadata": {
+            "published_date": null,
+            "publisher_title": null,
+            "source": null,
+            "seq_num": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "id": null,
+          "metadata": {
+            "published_date": null,
+            "seq_num": null,
+            "publisher_title": null,
+            "source": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "id": null,
+          "metadata": {
+            "published_date": null,
+            "publisher_title": null,
+            "source": null,
+            "seq_num": null
+          },
+          "page_content": null,
+          "type": null
+        }
+      ]
+    }
+  ],
+  "pending_narratives_with_docs": {},
+  "refine_counts": {},
+  "topic_keywords": {}
+}

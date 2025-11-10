@@ -1,0 +1,281 @@
+{
+  "topic_id": "1",
+  "query": "kamala harris her she win to the biden trump and",
+  "documents_bm25": [
+    {
+      "metadata": {
+        "topic": "1"
+      },
+      "page_content": "I think the act of biden endorsing Kamala is actually endorsing trump to win straight up. I totally agree with you. Not even about that, anyone in their sane mind should want trump to win. Based on the theories he propose",
+      "type": "Document"
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "Even with Joe Biden as a candidate, Donald Trump was the clear favorite to win the election. I feel for kamala Harris, she stands no chance. Democrats are losing, no doubt",
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "biden stepping down will not solve the issue of peoples disillusionment with the system and that MUST be addressed in kamalas campaign if she wants to win over more voters",
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "Gonzalo lira last video before his arrest and murder predicted Joe biden would be replaced by Kamala harris",
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "There's no way the Democrats are going to win this election. They weren't going to win with Biden and they sure the fuck aren't going to win with cackling Kamala talking about that unburdened nonsense she keeps repeating.",
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "Imo.. its gonna be kamala, if it wasn't biden wouldn't have been told to endorse her",
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "Harris says she intends to earn and win this nomination after Biden drops out News Break",
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "Vice President Kamala Harris says she intends to earn and win this nomination following Biden dropping out.",
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "I found this on NewsBreak: Harris says she intends to earn and win this nomination after Biden drops out",
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": null,
+      "type": null
+    }
+  ],
+  "documents_chroma": [
+    {
+      "id": "4fcb589d-4486-431a-9bbb-a1fea3c0496c",
+      "metadata": {
+        "publisher_title": "The Washington Post",
+        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+        "published_date": "Wed, 17 Jul 2024 07:00:00 GMT",
+        "seq_num": 62
+      },
+      "page_content": "In Vance, Trump finds a kindred spirit on election denial and Jan. 6  The Washington Post",
+      "type": null
+    },
+    {
+      "id": "74e52ea4-7f09-4d46-9ed4-898d21609f1e",
+      "metadata": {
+        "publisher_title": "Louisiana Illuminator",
+        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+        "published_date": "Fri, 19 Jul 2024 07:00:00 GMT",
+        "seq_num": 33
+      },
+      "page_content": "Louisiana Democrats put up no challenger to U.S. House Speaker Mike Johnson  Louisiana Illuminator",
+      "type": null
+    },
+    {
+      "id": "295cdb98-c2a3-4a38-a269-5574e1b52dd2",
+      "metadata": {
+        "published_date": "Sat, 20 Jul 2024 07:00:00 GMT",
+        "seq_num": 46,
+        "publisher_title": "Iowa Capital Dispatch",
+        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json"
+      },
+      "page_content": "Big data, social media and artificial intelligence will poison the 2024 election  Iowa Capital Dispatch",
+      "type": null
+    },
+    {
+      "id": "9a7bac89-609c-475b-9d12-0f7afe80c969",
+      "metadata": {
+        "publisher_title": "Axios",
+        "published_date": "Mon, 22 Jul 2024 07:00:00 GMT",
+        "seq_num": 93,
+        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json"
+      },
+      "page_content": "Scoop: Biden doubted Kamala Harris' election chances  Axios",
+      "type": null
+    },
+    {
+      "id": "f567495a-480a-437e-bb1c-df7ce8744bf9",
+      "metadata": {
+        "seq_num": 73,
+        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+        "publisher_title": "CNN",
+        "published_date": "Sun, 21 Jul 2024 07:00:00 GMT"
+      },
+      "page_content": "Biden will not seek reelection; endorses Harris  CNN",
+      "type": null
+    }
+  ],
+  "narratives": [],
+  "grade_result": {
+    "grade": "refine",
+    "explanation": "The narrative includes hallucinations (i.e. facts not present in the context). The context does not mention Kamala Harris being expected to win the GOP nomination, nor does it suggest that Kamala Harris is a candidate for the GOP nomination."
+  },
+  "approved_narratives": [
+    {
+      "narrative": {
+        "topic_id": null,
+        "actor": "user",
+        "action": "endorsing, intends to earn and win nomination",
+        "event": "GOP nomination",
+        "description": "Kamala Harris is expected to win the GOP nomination after Joe Biden drops out."
+      },
+      "documents_bm25": [
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        }
+      ],
+      "documents_chroma": [
+        {
+          "id": null,
+          "metadata": {
+            "publisher_title": null,
+            "source": null,
+            "published_date": null,
+            "seq_num": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "id": null,
+          "metadata": {
+            "publisher_title": null,
+            "source": null,
+            "published_date": null,
+            "seq_num": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "id": null,
+          "metadata": {
+            "published_date": null,
+            "seq_num": null,
+            "publisher_title": null,
+            "source": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "id": null,
+          "metadata": {
+            "publisher_title": null,
+            "published_date": null,
+            "seq_num": null,
+            "source": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "id": null,
+          "metadata": {
+            "seq_num": null,
+            "source": null,
+            "publisher_title": null,
+            "published_date": null
+          },
+          "page_content": null,
+          "type": null
+        }
+      ]
+    }
+  ],
+  "pending_narratives_with_docs": {},
+  "refine_counts": {},
+  "topic_keywords": {}
+}

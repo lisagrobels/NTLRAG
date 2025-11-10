@@ -1,0 +1,281 @@
+{
+  "topic_id": "2",
+  "query": "she her shes vp would michelle and as border than",
+  "documents_bm25": [
+    {
+      "metadata": {
+        "topic": "2"
+      },
+      "page_content": "Yes because she has done such a great job as the border czar that Biden appointed her to",
+      "type": "Document"
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "Kamla Harris as President she sucked as VP there is no way she could do the big job and run the country she sucks more than Biden",
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "I will be voting for her (if she wins the nomination) and I will do so far more enthusiastically than I would have with Biden. Lets gooooooooooo!",
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "Can she pick biden as her vice president?",
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "She's a baffoon, as was Biden. Yet, as she has shown throughout her career, she can be coached.",
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "The only thing better would be if she added Pete Buttigieg as VP. That MAGA cult would freak.",
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "Not if shes the Presidential nominee.",
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "And shes coherent enough to continually attack Trumps lies and nonsense. (And his age &amp; declining speaking abilities)",
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "They are already saying she was behind all the policies of Biden and if that is the case, unemployment being down, stock market rising, border crossings down, crime rate down, deportations upI guess she gets to take credit for that all.",
+      "type": null
+    },
+    {
+      "metadata": {
+        "topic": null
+      },
+      "page_content": "Shes just as radical and corrupt as Joe.",
+      "type": null
+    }
+  ],
+  "documents_chroma": [
+    {
+      "id": "74e52ea4-7f09-4d46-9ed4-898d21609f1e",
+      "metadata": {
+        "seq_num": 33,
+        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+        "published_date": "Fri, 19 Jul 2024 07:00:00 GMT",
+        "publisher_title": "Louisiana Illuminator"
+      },
+      "page_content": "Louisiana Democrats put up no challenger to U.S. House Speaker Mike Johnson  Louisiana Illuminator",
+      "type": null
+    },
+    {
+      "id": "44473838-c454-4202-b705-d9e4f71c71a2",
+      "metadata": {
+        "publisher_title": "UMSL Blogs",
+        "seq_num": 94,
+        "published_date": "Mon, 22 Jul 2024 07:00:00 GMT",
+        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json"
+      },
+      "page_content": "UMSL political scientists researching pressures faced by local election officials and decisions to remain in their roles  UMSL Blogs",
+      "type": null
+    },
+    {
+      "id": "295cdb98-c2a3-4a38-a269-5574e1b52dd2",
+      "metadata": {
+        "publisher_title": "Iowa Capital Dispatch",
+        "seq_num": 46,
+        "published_date": "Sat, 20 Jul 2024 07:00:00 GMT",
+        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json"
+      },
+      "page_content": "Big data, social media and artificial intelligence will poison the 2024 election  Iowa Capital Dispatch",
+      "type": null
+    },
+    {
+      "id": "d3ad3f1c-862e-44f5-a212-740f8ac8ba0e",
+      "metadata": {
+        "seq_num": 41,
+        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+        "publisher_title": "League of Women Voters",
+        "published_date": "Fri, 19 Jul 2024 07:00:00 GMT"
+      },
+      "page_content": "Colorado Montana Wyoming State Area Conference of the NAACP v. United States Election Integrity Plan  League of Women Voters",
+      "type": null
+    },
+    {
+      "id": "be060def-2c49-407a-9f0f-0da05f697e3c",
+      "metadata": {
+        "publisher_title": "Indiana Capital Chronicle",
+        "seq_num": 28,
+        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+        "published_date": "Thu, 18 Jul 2024 07:00:00 GMT"
+      },
+      "page_content": "Recount results for races still not certified over two months after primary election  Indiana Capital Chronicle",
+      "type": null
+    }
+  ],
+  "narratives": [],
+  "grade_result": {
+    "grade": "approved",
+    "explanation": "The narrative is consistent with the context. The user expresses support for Kamala Harris as President, criticizing Biden and Trump's policies, which aligns with the general sentiment in the provided articles."
+  },
+  "approved_narratives": [
+    {
+      "narrative": {
+        "topic_id": null,
+        "actor": "user",
+        "action": "sucks",
+        "event": "be VP",
+        "description": "The author expresses their support for Kamala Harris as President, criticizing Biden and Trump's policies."
+      },
+      "documents_bm25": [
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "metadata": {
+            "topic": null
+          },
+          "page_content": null,
+          "type": null
+        }
+      ],
+      "documents_chroma": [
+        {
+          "id": null,
+          "metadata": {
+            "seq_num": null,
+            "source": null,
+            "published_date": null,
+            "publisher_title": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "id": null,
+          "metadata": {
+            "publisher_title": null,
+            "seq_num": null,
+            "published_date": null,
+            "source": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "id": null,
+          "metadata": {
+            "publisher_title": null,
+            "seq_num": null,
+            "published_date": null,
+            "source": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "id": null,
+          "metadata": {
+            "seq_num": null,
+            "source": null,
+            "publisher_title": null,
+            "published_date": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "id": null,
+          "metadata": {
+            "publisher_title": null,
+            "seq_num": null,
+            "source": null,
+            "published_date": null
+          },
+          "page_content": null,
+          "type": null
+        }
+      ]
+    }
+  ],
+  "pending_narratives_with_docs": {},
+  "refine_counts": {},
+  "topic_keywords": {}
+}
