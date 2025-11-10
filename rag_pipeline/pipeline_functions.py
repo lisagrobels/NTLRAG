@@ -603,7 +603,37 @@ def run_narrative_extraction(topic_keywords: dict,
             print(f" Error processing topic {topic_id}: {e}")
             traceback.print_exc()
 
+    # Save all approved narratives globally
+    try:
+        approved_path = output_dir / "approved_narratives_global.json"
+
+        # Convert each narrative to a serializable dict
+        all_approved_serializable = []
+        for n in all_approved_narratives:
+            if hasattr(n, "model_dump"):  # Pydantic model
+                all_approved_serializable.append(n.model_dump(mode="python", by_alias=False))
+            elif isinstance(n, dict):
+                all_approved_serializable.append(n)
+            else:
+                # Fallback: convert to string if it's something else (e.g. plain text)
+                all_approved_serializable.append(str(n))
+
+        # Convert NumPy or other non-JSON-safe types
+        all_approved_serializable = convert_numpy_types(all_approved_serializable)
+
+        # Write to disk
+        with open(approved_path, "w") as f:
+            json.dump(all_approved_serializable, f, indent=2)
+
+        print(f" Saved {len(all_approved_narratives)} total approved narratives to {approved_path}")
+
+    except Exception as e:
+        print(f" Failed to save approved_narratives_global.json: {e}")
+        traceback.print_exc()
+
     return all_approved_narratives, topic_results
+
+
 
 
 

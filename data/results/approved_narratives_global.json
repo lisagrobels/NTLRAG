@@ -3,36 +3,552 @@
     "narrative": {
       "topic_id": "0",
       "actor": "user",
-      "action": "express opinion or criticism about Joe Biden's decision to drop out of the presidential race",
-      "event": "Joe Biden dropping out of the presidential race",
-      "description": "Some users criticize Joe Biden for his age and abilities, while others express admiration and support."
-    }
+      "action": "expressed opinions about Joe Biden",
+      "event": "Joe Biden dropping out of the race",
+      "description": "Some supporters expressed dissatisfaction with Biden's decision to drop out, while others defended his actions and praised him as an honorable President."
+    },
+    "documents_bm25": [
+      {
+        "metadata": {
+          "topic": "0"
+        },
+        "page_content": "you realize joe biden is the current president right?",
+        "type": "Document"
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "You guys are hard to satisfy. First you all say Biden is too old and senile, now that he drops out of the race, again you are displeased. Make up your minds. Please.",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "if biden dropped out does that mean the trump x biden edits to chappell songs have to end?",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "when it was announced he was dropping out, joe biden shit his depends and when he found out he was not going to seek reelection, he was very upset",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "absolutely insane to me that people are on here saying biden shouldn't have dropped out or calling it heartbreaking that he did like literally what about this campaign has made him seem remotely qualified for a second term",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "Are you fucking braindead? Without biden none of this would have been possible. Ho could've ended it every moment. No Palestinian child had to be killed if it wasn't for him. He is the most responsible person for this genocide",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "President Biden is the most descent, honorable and capable President, that America has seen in the last 2 decades! Thank you Mr. President for your service and for your love of Country! You make me feel proud to be an American.",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "Biden sniffs kids. Why does he do that you think?",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "Who is currently in charge of the United States of America? If Biden is unfit to run for reelection, how is he fit to run the country? Like and RT mine instead of Ian's since he's not even American.",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "RIP to all of the biden fan accounts",
+        "type": null
+      }
+    ],
+    "documents_chroma": [
+      {
+        "id": "a0bf2ccb-05f9-4280-943b-79e5f42b3489",
+        "metadata": {
+          "seq_num": 33,
+          "published_date": "Fri, 19 Jul 2024 07:00:00 GMT",
+          "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+          "publisher_title": "Louisiana Illuminator"
+        },
+        "page_content": "Louisiana Democrats put up no challenger to U.S. House Speaker Mike Johnson  Louisiana Illuminator",
+        "type": null
+      },
+      {
+        "id": "b67ccc5a-5370-4ae1-ad18-5cd9aa33ce0a",
+        "metadata": {
+          "seq_num": 46,
+          "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+          "publisher_title": "Iowa Capital Dispatch",
+          "published_date": "Sat, 20 Jul 2024 07:00:00 GMT"
+        },
+        "page_content": "Big data, social media and artificial intelligence will poison the 2024 election  Iowa Capital Dispatch",
+        "type": null
+      },
+      {
+        "id": "957864c5-7724-4edb-8b40-300907110f7e",
+        "metadata": {
+          "published_date": "Mon, 22 Jul 2024 07:00:00 GMT",
+          "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+          "seq_num": 94,
+          "publisher_title": "UMSL Blogs"
+        },
+        "page_content": "UMSL political scientists researching pressures faced by local election officials and decisions to remain in their roles  UMSL Blogs",
+        "type": null
+      },
+      {
+        "id": "3248a11a-25f9-4776-a4ab-40c9bf0f285c",
+        "metadata": {
+          "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+          "publisher_title": "Indiana Capital Chronicle",
+          "published_date": "Thu, 18 Jul 2024 07:00:00 GMT",
+          "seq_num": 28
+        },
+        "page_content": "Recount results for races still not certified over two months after primary election  Indiana Capital Chronicle",
+        "type": null
+      },
+      {
+        "id": "37263e98-c7d4-4bba-a6ab-dab23889bd70",
+        "metadata": {
+          "published_date": "Fri, 19 Jul 2024 07:00:00 GMT",
+          "seq_num": 41,
+          "publisher_title": "League of Women Voters",
+          "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json"
+        },
+        "page_content": "Colorado Montana Wyoming State Area Conference of the NAACP v. United States Election Integrity Plan  League of Women Voters",
+        "type": null
+      }
+    ]
   },
   {
     "narrative": {
       "topic_id": "1",
-      "actor": "Joe Biden",
-      "action": "endorsed Kamala",
-      "event": "win the election",
-      "description": "Joe Biden endorsed Kamala Harris, but it's unlikely to change the outcome of the election."
-    }
+      "actor": "Kamala Harris, Joe Biden, Donald Trump, Gonzalo Lira",
+      "action": "will endorse, propose, intends to earn and win, predicted",
+      "event": "the nomination, the election, people's disillusionment with the system",
+      "description": "Kamala Harris will earn and win the nomination after Joe Biden drops out, despite Donald Trump being the clear favorite to win the election."
+    },
+    "documents_bm25": [
+      {
+        "metadata": {
+          "topic": "1"
+        },
+        "page_content": "I think the act of biden endorsing Kamala is actually endorsing trump to win straight up. I totally agree with you. Not even about that, anyone in their sane mind should want trump to win. Based on the theories he propose",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "Even with Joe Biden as a candidate, Donald Trump was the clear favorite to win the election. I feel for kamala Harris, she stands no chance. Democrats are losing, no doubt",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "biden stepping down will not solve the issue of peoples disillusionment with the system and that MUST be addressed in kamalas campaign if she wants to win over more voters",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "Gonzalo lira last video before his arrest and murder predicted Joe biden would be replaced by Kamala harris",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "There's no way the Democrats are going to win this election. They weren't going to win with Biden and they sure the fuck aren't going to win with cackling Kamala talking about that unburdened nonsense she keeps repeating.",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "Imo.. its gonna be kamala, if it wasn't biden wouldn't have been told to endorse her",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "Harris says she intends to earn and win this nomination after Biden drops out News Break",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "Vice President Kamala Harris says she intends to earn and win this nomination following Biden dropping out.",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "I found this on NewsBreak: Harris says she intends to earn and win this nomination after Biden drops out",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": null,
+        "type": null
+      }
+    ],
+    "documents_chroma": [
+      {
+        "id": "e2f67a9b-deb9-4d1b-bd1a-948926e46ee1",
+        "metadata": {
+          "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+          "seq_num": 62,
+          "published_date": "Wed, 17 Jul 2024 07:00:00 GMT",
+          "publisher_title": "The Washington Post"
+        },
+        "page_content": "In Vance, Trump finds a kindred spirit on election denial and Jan. 6  The Washington Post",
+        "type": null
+      },
+      {
+        "id": "a0bf2ccb-05f9-4280-943b-79e5f42b3489",
+        "metadata": {
+          "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+          "seq_num": null,
+          "publisher_title": "Louisiana Illuminator",
+          "published_date": "Fri, 19 Jul 2024 07:00:00 GMT"
+        },
+        "page_content": "Louisiana Democrats put up no challenger to U.S. House Speaker Mike Johnson  Louisiana Illuminator",
+        "type": null
+      },
+      {
+        "id": "b67ccc5a-5370-4ae1-ad18-5cd9aa33ce0a",
+        "metadata": {
+          "publisher_title": "Iowa Capital Dispatch",
+          "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+          "seq_num": null,
+          "published_date": "Sat, 20 Jul 2024 07:00:00 GMT"
+        },
+        "page_content": "Big data, social media and artificial intelligence will poison the 2024 election  Iowa Capital Dispatch",
+        "type": null
+      },
+      {
+        "id": "e3947386-d249-4577-adaa-4fb3817cd322",
+        "metadata": {
+          "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+          "seq_num": 93,
+          "publisher_title": "Axios",
+          "published_date": "Mon, 22 Jul 2024 07:00:00 GMT"
+        },
+        "page_content": "Scoop: Biden doubted Kamala Harris' election chances  Axios",
+        "type": null
+      },
+      {
+        "id": "0e6629a6-89b4-47e3-a8a4-3f4e1779f3bc",
+        "metadata": {
+          "seq_num": 73,
+          "published_date": "Sun, 21 Jul 2024 07:00:00 GMT",
+          "publisher_title": "CNN",
+          "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json"
+        },
+        "page_content": "Biden will not seek reelection; endorses Harris  CNN",
+        "type": null
+      }
+    ]
   },
   {
     "narrative": {
       "topic_id": "2",
       "actor": "user",
-      "action": "endorsed Kamla Harris as President and VP",
-      "event": "Presidential nomination",
-      "description": "Supporting Kamla Harris for President due to her job performance as border czar"
-    }
+      "action": "will be voting for her",
+      "event": "(if she wins the nomination)",
+      "description": "The user expresses support for Kamla Harris as a presidential candidate"
+    },
+    "documents_bm25": [
+      {
+        "metadata": {
+          "topic": "2"
+        },
+        "page_content": "Yes because she has done such a great job as the border czar that Biden appointed her to",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "Kamla Harris as President she sucked as VP there is no way she could do the big job and run the country she sucks more than Biden",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "I will be voting for her (if she wins the nomination) and I will do so far more enthusiastically than I would have with Biden. Lets gooooooooooo!",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "Can she pick biden as her vice president?",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "She's a baffoon, as was Biden. Yet, as she has shown throughout her career, she can be coached.",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "The only thing better would be if she added Pete Buttigieg as VP. That MAGA cult would freak.",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "Not if shes the Presidential nominee.",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "And shes coherent enough to continually attack Trumps lies and nonsense. (And his age &amp; declining speaking abilities)",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "They are already saying she was behind all the policies of Biden and if that is the case, unemployment being down, stock market rising, border crossings down, crime rate down, deportations upI guess she gets to take credit for that all.",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "Shes just as radical and corrupt as Joe.",
+        "type": null
+      }
+    ],
+    "documents_chroma": [
+      {
+        "id": "a0bf2ccb-05f9-4280-943b-79e5f42b3489",
+        "metadata": {
+          "seq_num": null,
+          "published_date": "Fri, 19 Jul 2024 07:00:00 GMT",
+          "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+          "publisher_title": "Louisiana Illuminator"
+        },
+        "page_content": "Louisiana Democrats put up no challenger to U.S. House Speaker Mike Johnson  Louisiana Illuminator",
+        "type": null
+      },
+      {
+        "id": "957864c5-7724-4edb-8b40-300907110f7e",
+        "metadata": {
+          "seq_num": null,
+          "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+          "published_date": "Mon, 22 Jul 2024 07:00:00 GMT",
+          "publisher_title": "UMSL Blogs"
+        },
+        "page_content": "UMSL political scientists researching pressures faced by local election officials and decisions to remain in their roles  UMSL Blogs",
+        "type": null
+      },
+      {
+        "id": "b67ccc5a-5370-4ae1-ad18-5cd9aa33ce0a",
+        "metadata": {
+          "published_date": "Sat, 20 Jul 2024 07:00:00 GMT",
+          "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+          "publisher_title": "Iowa Capital Dispatch",
+          "seq_num": null
+        },
+        "page_content": "Big data, social media and artificial intelligence will poison the 2024 election  Iowa Capital Dispatch",
+        "type": null
+      },
+      {
+        "id": "37263e98-c7d4-4bba-a6ab-dab23889bd70",
+        "metadata": {
+          "seq_num": null,
+          "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+          "publisher_title": "League of Women Voters",
+          "published_date": "Fri, 19 Jul 2024 07:00:00 GMT"
+        },
+        "page_content": "Colorado Montana Wyoming State Area Conference of the NAACP v. United States Election Integrity Plan  League of Women Voters",
+        "type": null
+      },
+      {
+        "id": "3248a11a-25f9-4776-a4ab-40c9bf0f285c",
+        "metadata": {
+          "publisher_title": "Indiana Capital Chronicle",
+          "seq_num": null,
+          "published_date": "Thu, 18 Jul 2024 07:00:00 GMT",
+          "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json"
+        },
+        "page_content": "Recount results for races still not certified over two months after primary election  Indiana Capital Chronicle",
+        "type": null
+      }
+    ]
   },
   {
     "narrative": {
       "topic_id": "3",
       "actor": "user",
-      "action": "endorsed",
-      "event": "race",
-      "description": "A user expresses support for a Biden-Harris or Harris-Buttigieg ticket"
-    }
+      "action": "endorsed, discussed, said",
+      "event": "Biden's, Harris' campaign",
+      "description": "The user discusses the potential impact of a Biden-Harris or Harris-Buttigieg ticket on the 2024 US Presidential Election"
+    },
+    "documents_bm25": [
+      {
+        "metadata": {
+          "topic": "3"
+        },
+        "page_content": "After critical debate, Biden and Harris kept visiting swing state NC. What they did here.",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": null,
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": null,
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "Literally only in this chat is voting for biden harris. ability to vote has destroyed this country.",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "And the whole time I said it doesnt make a big difference. It makes a small difference, which can be important. You said that Harris has a good chance at winning. Thats a big difference from Biden, and all Im asking is where that big difference comes from.",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "They tried to throw Trump in jail, failed. They tried to assassinate Trump 2 days before the RNC to throw it into chaos, it failed. Almost exactly a week later, they force Biden to exit race. The deep state is desperate, thats scary and dangerous. He endorses Harris as a to em",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "Can't think of a single swing state where Harris improves from Biden.",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "He does not play in the battleground Midwest states in my mind. Not as well as Biden, Harris, Whitmer, Pritzker and many others with cleaner labor records. No hunger for California guys there.",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "Only one person could be as Retarded as Biden and in walks Kamal Toe, I love it on my knees Harris!!! Buahahahahaha good luck with that!",
+        "type": null
+      },
+      {
+        "metadata": {
+          "topic": null
+        },
+        "page_content": "I'm actually relieved. Biden did a good job but he's not as sharp as we need in a POTUS. A Harris/Buttigieg or Harris/Whitmer ticket would be awesome and unbeatable.",
+        "type": null
+      }
+    ],
+    "documents_chroma": [
+      {
+        "id": "957864c5-7724-4edb-8b40-300907110f7e",
+        "metadata": {
+          "seq_num": null,
+          "published_date": "Mon, 22 Jul 2024 07:00:00 GMT",
+          "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+          "publisher_title": "UMSL Blogs"
+        },
+        "page_content": "UMSL political scientists researching pressures faced by local election officials and decisions to remain in their roles  UMSL Blogs",
+        "type": null
+      },
+      {
+        "id": "a0bf2ccb-05f9-4280-943b-79e5f42b3489",
+        "metadata": {
+          "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+          "published_date": "Fri, 19 Jul 2024 07:00:00 GMT",
+          "seq_num": null,
+          "publisher_title": "Louisiana Illuminator"
+        },
+        "page_content": "Louisiana Democrats put up no challenger to U.S. House Speaker Mike Johnson  Louisiana Illuminator",
+        "type": null
+      },
+      {
+        "id": "b67ccc5a-5370-4ae1-ad18-5cd9aa33ce0a",
+        "metadata": {
+          "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+          "publisher_title": "Iowa Capital Dispatch",
+          "seq_num": null,
+          "published_date": "Sat, 20 Jul 2024 07:00:00 GMT"
+        },
+        "page_content": "Big data, social media and artificial intelligence will poison the 2024 election  Iowa Capital Dispatch",
+        "type": null
+      },
+      {
+        "id": "3248a11a-25f9-4776-a4ab-40c9bf0f285c",
+        "metadata": {
+          "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+          "publisher_title": "Indiana Capital Chronicle",
+          "published_date": "Thu, 18 Jul 2024 07:00:00 GMT",
+          "seq_num": null
+        },
+        "page_content": "Recount results for races still not certified over two months after primary election  Indiana Capital Chronicle",
+        "type": null
+      },
+      {
+        "id": "228f3eca-1efd-4a8a-834d-5c8abcd071ca",
+        "metadata": {
+          "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+          "seq_num": 34,
+          "published_date": "Fri, 19 Jul 2024 07:00:00 GMT",
+          "publisher_title": "Louisiana Illuminator"
+        },
+        "page_content": "Two Republicans, one Democrat to meet in Public Service Commission race  Louisiana Illuminator",
+        "type": null
+      }
+    ]
   }
 ]

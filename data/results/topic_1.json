@@ -75,56 +75,56 @@
   ],
   "documents_chroma": [
     {
-      "id": "4fcb589d-4486-431a-9bbb-a1fea3c0496c",
+      "id": "e2f67a9b-deb9-4d1b-bd1a-948926e46ee1",
       "metadata": {
-        "publisher_title": "The Washington Post",
         "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+        "seq_num": 62,
         "published_date": "Wed, 17 Jul 2024 07:00:00 GMT",
-        "seq_num": 62
+        "publisher_title": "The Washington Post"
       },
       "page_content": "In Vance, Trump finds a kindred spirit on election denial and Jan. 6  The Washington Post",
       "type": null
     },
     {
-      "id": "74e52ea4-7f09-4d46-9ed4-898d21609f1e",
+      "id": "a0bf2ccb-05f9-4280-943b-79e5f42b3489",
       "metadata": {
-        "publisher_title": "Louisiana Illuminator",
         "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
-        "published_date": "Fri, 19 Jul 2024 07:00:00 GMT",
-        "seq_num": 33
+        "seq_num": 33,
+        "publisher_title": "Louisiana Illuminator",
+        "published_date": "Fri, 19 Jul 2024 07:00:00 GMT"
       },
       "page_content": "Louisiana Democrats put up no challenger to U.S. House Speaker Mike Johnson  Louisiana Illuminator",
       "type": null
     },
     {
-      "id": "295cdb98-c2a3-4a38-a269-5574e1b52dd2",
+      "id": "b67ccc5a-5370-4ae1-ad18-5cd9aa33ce0a",
       "metadata": {
-        "published_date": "Sat, 20 Jul 2024 07:00:00 GMT",
-        "seq_num": 46,
         "publisher_title": "Iowa Capital Dispatch",
-        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json"
+        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+        "seq_num": 46,
+        "published_date": "Sat, 20 Jul 2024 07:00:00 GMT"
       },
       "page_content": "Big data, social media and artificial intelligence will poison the 2024 election  Iowa Capital Dispatch",
       "type": null
     },
     {
-      "id": "9a7bac89-609c-475b-9d12-0f7afe80c969",
+      "id": "e3947386-d249-4577-adaa-4fb3817cd322",
       "metadata": {
-        "publisher_title": "Axios",
-        "published_date": "Mon, 22 Jul 2024 07:00:00 GMT",
+        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
         "seq_num": 93,
-        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json"
+        "publisher_title": "Axios",
+        "published_date": "Mon, 22 Jul 2024 07:00:00 GMT"
       },
       "page_content": "Scoop: Biden doubted Kamala Harris' election chances  Axios",
       "type": null
     },
     {
-      "id": "f567495a-480a-437e-bb1c-df7ce8744bf9",
+      "id": "0e6629a6-89b4-47e3-a8a4-3f4e1779f3bc",
       "metadata": {
         "seq_num": 73,
-        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+        "published_date": "Sun, 21 Jul 2024 07:00:00 GMT",
         "publisher_title": "CNN",
-        "published_date": "Sun, 21 Jul 2024 07:00:00 GMT"
+        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json"
       },
       "page_content": "Biden will not seek reelection; endorses Harris  CNN",
       "type": null
@@ -133,16 +133,16 @@
   "narratives": [],
   "grade_result": {
     "grade": "refine",
-    "explanation": "The narrative includes hallucinations (i.e. facts not present in the context). The context does not mention Kamala Harris being expected to win the GOP nomination, nor does it suggest that Kamala Harris is a candidate for the GOP nomination."
+    "explanation": "The narrative includes hallucinations (facts not present in the context) such as 'Donald Trump was the clear favorite to win the election' and 'Kamala Harris stands no chance', which contradict the context provided by other sources."
   },
   "approved_narratives": [
     {
       "narrative": {
         "topic_id": null,
-        "actor": "user",
-        "action": "endorsing, intends to earn and win nomination",
-        "event": "GOP nomination",
-        "description": "Kamala Harris is expected to win the GOP nomination after Joe Biden drops out."
+        "actor": "Kamala Harris, Joe Biden, Donald Trump, Gonzalo Lira",
+        "action": "will endorse, propose, intends to earn and win, predicted",
+        "event": "the nomination, the election, people's disillusionment with the system",
+        "description": "Kamala Harris will earn and win the nomination after Joe Biden drops out, despite Donald Trump being the clear favorite to win the election."
       },
       "documents_bm25": [
         {
@@ -220,10 +220,10 @@
         {
           "id": null,
           "metadata": {
-            "publisher_title": null,
             "source": null,
+            "seq_num": null,
             "published_date": null,
-            "seq_num": null
+            "publisher_title": null
           },
           "page_content": null,
           "type": null
@@ -231,43 +231,43 @@
         {
           "id": null,
           "metadata": {
-            "publisher_title": null,
             "source": null,
-            "published_date": null,
-            "seq_num": null
-          },
-          "page_content": null,
-          "type": null
-        },
-        {
-          "id": null,
-          "metadata": {
-            "published_date": null,
             "seq_num": null,
-            "publisher_title": null,
-            "source": null
-          },
-          "page_content": null,
-          "type": null
-        },
-        {
-          "id": null,
-          "metadata": {
-            "publisher_title": null,
-            "published_date": null,
-            "seq_num": null,
-            "source": null
-          },
-          "page_content": null,
-          "type": null
-        },
-        {
-          "id": null,
-          "metadata": {
-            "seq_num": null,
-            "source": null,
             "publisher_title": null,
             "published_date": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "id": null,
+          "metadata": {
+            "publisher_title": null,
+            "source": null,
+            "seq_num": null,
+            "published_date": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "id": null,
+          "metadata": {
+            "source": null,
+            "seq_num": null,
+            "publisher_title": null,
+            "published_date": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "id": null,
+          "metadata": {
+            "seq_num": null,
+            "published_date": null,
+            "publisher_title": null,
+            "source": null
           },
           "page_content": null,
           "type": null

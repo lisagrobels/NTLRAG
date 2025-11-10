@@ -75,56 +75,56 @@
   ],
   "documents_chroma": [
     {
-      "id": "74e52ea4-7f09-4d46-9ed4-898d21609f1e",
+      "id": "a0bf2ccb-05f9-4280-943b-79e5f42b3489",
       "metadata": {
         "seq_num": 33,
         "published_date": "Fri, 19 Jul 2024 07:00:00 GMT",
-        "publisher_title": "Louisiana Illuminator",
-        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json"
+        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
+        "publisher_title": "Louisiana Illuminator"
       },
       "page_content": "Louisiana Democrats put up no challenger to U.S. House Speaker Mike Johnson  Louisiana Illuminator",
       "type": null
     },
     {
-      "id": "295cdb98-c2a3-4a38-a269-5574e1b52dd2",
+      "id": "b67ccc5a-5370-4ae1-ad18-5cd9aa33ce0a",
       "metadata": {
         "seq_num": 46,
-        "published_date": "Sat, 20 Jul 2024 07:00:00 GMT",
+        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
         "publisher_title": "Iowa Capital Dispatch",
-        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json"
+        "published_date": "Sat, 20 Jul 2024 07:00:00 GMT"
       },
       "page_content": "Big data, social media and artificial intelligence will poison the 2024 election  Iowa Capital Dispatch",
       "type": null
     },
     {
-      "id": "44473838-c454-4202-b705-d9e4f71c71a2",
+      "id": "957864c5-7724-4edb-8b40-300907110f7e",
       "metadata": {
-        "seq_num": 94,
-        "publisher_title": "UMSL Blogs",
+        "published_date": "Mon, 22 Jul 2024 07:00:00 GMT",
         "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
-        "published_date": "Mon, 22 Jul 2024 07:00:00 GMT"
+        "seq_num": 94,
+        "publisher_title": "UMSL Blogs"
       },
       "page_content": "UMSL political scientists researching pressures faced by local election officials and decisions to remain in their roles  UMSL Blogs",
       "type": null
     },
     {
-      "id": "be060def-2c49-407a-9f0f-0da05f697e3c",
+      "id": "3248a11a-25f9-4776-a4ab-40c9bf0f285c",
       "metadata": {
         "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
         "publisher_title": "Indiana Capital Chronicle",
-        "seq_num": 28,
-        "published_date": "Thu, 18 Jul 2024 07:00:00 GMT"
+        "published_date": "Thu, 18 Jul 2024 07:00:00 GMT",
+        "seq_num": 28
       },
       "page_content": "Recount results for races still not certified over two months after primary election  Indiana Capital Chronicle",
       "type": null
     },
     {
-      "id": "d3ad3f1c-862e-44f5-a212-740f8ac8ba0e",
+      "id": "37263e98-c7d4-4bba-a6ab-dab23889bd70",
       "metadata": {
+        "published_date": "Fri, 19 Jul 2024 07:00:00 GMT",
         "seq_num": 41,
         "publisher_title": "League of Women Voters",
-        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
-        "published_date": "Fri, 19 Jul 2024 07:00:00 GMT"
+        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json"
       },
       "page_content": "Colorado Montana Wyoming State Area Conference of the NAACP v. United States Election Integrity Plan  League of Women Voters",
       "type": null
@@ -133,16 +133,16 @@
   "narratives": [],
   "grade_result": {
     "grade": "approved",
-    "explanation": "The narrative is consistent with the context. The user expresses strong support for Joe Biden, who is mentioned in multiple news articles from 2024, including Louisiana Democrats putting up no challenger to U.S. House Speaker Mike Johnson and Big data, social media and artificial intelligence will poison the 2024 election."
+    "explanation": "The narrative is consistent with the context and does not contradict it. Although the opinions expressed in the narrative are controversial and strong, they are still within the realm of free speech and do not directly conflict with any facts presented in the context."
   },
   "approved_narratives": [
     {
       "narrative": {
         "topic_id": null,
         "actor": "user",
-        "action": "express opinion and make judgment",
-        "event": "Joe Biden dropping out of the race for reelection",
-        "description": "The user expresses strong support for Joe Biden as the current President of the United States"
+        "action": "expressed opinions about Joe Biden",
+        "event": "Joe Biden dropping out of the race",
+        "description": "Some supporters expressed dissatisfaction with Biden's decision to drop out, while others defended his actions and praised him as an honorable President."
       },
       "documents_bm25": [
         {
@@ -222,8 +222,8 @@
           "metadata": {
             "seq_num": null,
             "published_date": null,
-            "publisher_title": null,
-            "source": null
+            "source": null,
+            "publisher_title": null
           },
           "page_content": null,
           "type": null
@@ -232,42 +232,42 @@
           "id": null,
           "metadata": {
             "seq_num": null,
+            "source": null,
+            "publisher_title": null,
+            "published_date": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "id": null,
+          "metadata": {
             "published_date": null,
+            "source": null,
+            "seq_num": null,
+            "publisher_title": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "id": null,
+          "metadata": {
+            "source": null,
+            "publisher_title": null,
+            "published_date": null,
+            "seq_num": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "id": null,
+          "metadata": {
+            "published_date": null,
+            "seq_num": null,
             "publisher_title": null,
             "source": null
-          },
-          "page_content": null,
-          "type": null
-        },
-        {
-          "id": null,
-          "metadata": {
-            "seq_num": null,
-            "publisher_title": null,
-            "source": null,
-            "published_date": null
-          },
-          "page_content": null,
-          "type": null
-        },
-        {
-          "id": null,
-          "metadata": {
-            "source": null,
-            "publisher_title": null,
-            "seq_num": null,
-            "published_date": null
-          },
-          "page_content": null,
-          "type": null
-        },
-        {
-          "id": null,
-          "metadata": {
-            "seq_num": null,
-            "publisher_title": null,
-            "source": null,
-            "published_date": null
           },
           "page_content": null,
           "type": null

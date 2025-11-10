@@ -1,23 +1,9 @@
 #!/bin/bash
-set -e  # exit on error
+set -e
 
-echo "Check and update system packages..."
-sudo apt update
+echo "=== Installing Python dependencies ==="
+python3 -m pip install --upgrade pip
+python3 -m pip install -r requirements.txt
 
-echo "Installing dependencies..."
-sudo apt install -y pciutils
-
-echo "Installing Ollama..."
-curl -fsSL https://ollama.com/install.sh | sh
-
-echo "Installing Python dependencies..."
-pip install --upgrade \
-    langchain_community \
-    langchain-ollama \
-    chromadb \
-    torch \
-    jq \
-    rank-bm25 \
-    langgraph
-
-echo "Setup complete!"
+echo "=== Setup complete! ==="
+echo "⚙️  Note: Please install your preferred EXTRACTOR/VALIDATOR/REFINER component separately. If you choose Ollama LLM, follow the instructions in the README."

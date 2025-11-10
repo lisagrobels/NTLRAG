@@ -75,18 +75,18 @@
   ],
   "documents_chroma": [
     {
-      "id": "44473838-c454-4202-b705-d9e4f71c71a2",
+      "id": "957864c5-7724-4edb-8b40-300907110f7e",
       "metadata": {
         "seq_num": 94,
-        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
         "published_date": "Mon, 22 Jul 2024 07:00:00 GMT",
+        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
         "publisher_title": "UMSL Blogs"
       },
       "page_content": "UMSL political scientists researching pressures faced by local election officials and decisions to remain in their roles  UMSL Blogs",
       "type": null
     },
     {
-      "id": "74e52ea4-7f09-4d46-9ed4-898d21609f1e",
+      "id": "a0bf2ccb-05f9-4280-943b-79e5f42b3489",
       "metadata": {
         "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
         "published_date": "Fri, 19 Jul 2024 07:00:00 GMT",
@@ -97,34 +97,34 @@
       "type": null
     },
     {
-      "id": "295cdb98-c2a3-4a38-a269-5574e1b52dd2",
+      "id": "b67ccc5a-5370-4ae1-ad18-5cd9aa33ce0a",
       "metadata": {
-        "published_date": "Sat, 20 Jul 2024 07:00:00 GMT",
-        "publisher_title": "Iowa Capital Dispatch",
         "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
-        "seq_num": 46
+        "publisher_title": "Iowa Capital Dispatch",
+        "seq_num": 46,
+        "published_date": "Sat, 20 Jul 2024 07:00:00 GMT"
       },
       "page_content": "Big data, social media and artificial intelligence will poison the 2024 election  Iowa Capital Dispatch",
       "type": null
     },
     {
-      "id": "be060def-2c49-407a-9f0f-0da05f697e3c",
+      "id": "3248a11a-25f9-4776-a4ab-40c9bf0f285c",
       "metadata": {
-        "published_date": "Thu, 18 Jul 2024 07:00:00 GMT",
-        "seq_num": 28,
+        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
         "publisher_title": "Indiana Capital Chronicle",
-        "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json"
+        "published_date": "Thu, 18 Jul 2024 07:00:00 GMT",
+        "seq_num": 28
       },
       "page_content": "Recount results for races still not certified over two months after primary election  Indiana Capital Chronicle",
       "type": null
     },
     {
-      "id": "a71f3795-f95d-487e-92b4-d9e52d2a5a3e",
+      "id": "228f3eca-1efd-4a8a-834d-5c8abcd071ca",
       "metadata": {
-        "published_date": "Fri, 19 Jul 2024 07:00:00 GMT",
-        "publisher_title": "Louisiana Illuminator",
         "source": "C:\\Users\\b50757\\PycharmProjects\\NTLRAG\\data\\testdata_news.json",
-        "seq_num": 34
+        "seq_num": 34,
+        "published_date": "Fri, 19 Jul 2024 07:00:00 GMT",
+        "publisher_title": "Louisiana Illuminator"
       },
       "page_content": "Two Republicans, one Democrat to meet in Public Service Commission race  Louisiana Illuminator",
       "type": null
@@ -133,16 +133,16 @@
   "narratives": [],
   "grade_result": {
     "grade": "approved",
-    "explanation": "The narrative is consistent with the context and does not contradict any information provided."
+    "explanation": "The narrative is consistent with the context and does not contradict any facts provided. It includes personal opinions and speculation, but these are allowed under the rules."
   },
   "approved_narratives": [
     {
       "narrative": {
         "topic_id": null,
         "actor": "user",
-        "action": "endorses",
-        "event": "race",
-        "description": "The author supports a Harris/Buttigieg or Harris/Whitmer ticket as an unbeatable option"
+        "action": "endorsed, discussed, said",
+        "event": "Biden's, Harris' campaign",
+        "description": "The user discusses the potential impact of a Biden-Harris or Harris-Buttigieg ticket on the 2024 US Presidential Election"
       },
       "documents_bm25": [
         {
@@ -221,8 +221,8 @@
           "id": null,
           "metadata": {
             "seq_num": null,
-            "source": null,
             "published_date": null,
+            "source": null,
             "publisher_title": null
           },
           "page_content": null,
@@ -242,21 +242,10 @@
         {
           "id": null,
           "metadata": {
-            "published_date": null,
-            "publisher_title": null,
             "source": null,
-            "seq_num": null
-          },
-          "page_content": null,
-          "type": null
-        },
-        {
-          "id": null,
-          "metadata": {
-            "published_date": null,
+            "publisher_title": null,
             "seq_num": null,
-            "publisher_title": null,
-            "source": null
+            "published_date": null
           },
           "page_content": null,
           "type": null
@@ -264,10 +253,21 @@
         {
           "id": null,
           "metadata": {
-            "published_date": null,
-            "publisher_title": null,
             "source": null,
+            "publisher_title": null,
+            "published_date": null,
             "seq_num": null
+          },
+          "page_content": null,
+          "type": null
+        },
+        {
+          "id": null,
+          "metadata": {
+            "source": null,
+            "seq_num": null,
+            "published_date": null,
+            "publisher_title": null
           },
           "page_content": null,
           "type": null
