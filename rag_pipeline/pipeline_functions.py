@@ -326,7 +326,7 @@ Narrative:
     elif graded and graded.grade == Grade.refine:
         refine_count += 1
         if refine_count >= max_refines:
-            print(f"⚠️ Max refine attempts reached for topic {topic_key}, approving narrative.")
+            print(f" Max refine attempts reached for topic {topic_key}, approving narrative.")
             approved_narratives.append(narrative_with_docs)
             refine_counts.pop(topic_key, None)
             pending_narratives_with_docs.pop(topic_key, None)
