@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Grobelscheg"
+  given-names: "Lisa"
+  orcid: "https://orcid.org/0009-0008-9694-9312"
+- family-names: "Kahr"
+  given-names: "Ema"
+  orcid: "https://orcid.org/0000-0003-1145-6778"
+- family-names: "Strembeck"
+  given-names: "Mark"
+  orcid: "https://orcid.org/0000-0003-1680-9296"  
+title: "NTLRAG: Narrative Topic Labels derived with Retrieval Augmented Generation"
+url: "https://github.com/lisagrobels/NTLRAG"
+preferred-citation:
+  type: misc
+  authors:
+ - family-names: "Grobelscheg"
+  given-names: "Lisa"
+  orcid: "https://orcid.org/0009-0008-9694-9312"
+- family-names: "Kahr"
+  given-names: "Ema"
+  orcid: "https://orcid.org/0000-0003-1145-6778"
+- family-names: "Strembeck"
+  given-names: "Mark"
+  journal: "arXiv preprint"
+  month: 2
+  title: "NTLRAG: Narrative Topic Labels derived with Retrieval Augmented Generation"
+  year: 2026
+  identifiers:
+    - type: "doi"
+      value: "10.48550/arXiv.2602.17216"
