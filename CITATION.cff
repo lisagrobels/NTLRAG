@@ -13,7 +13,7 @@ authors:
 title: "NTLRAG: Narrative Topic Labels derived with Retrieval Augmented Generation"
 url: "https://github.com/lisagrobels/NTLRAG"
 preferred-citation:
-  type: misc
+  type: article
   authors:
     - family-names: "Grobelscheg"
       given-names: "Lisa"
