@@ -62,7 +62,6 @@ class GraphState(BaseModel):
 # Setup LLMs
 llm = ChatOllama(model=ollama_version)
 llm_struct = ChatOllama(model=ollama_version).with_structured_output(Narrative, method='json_schema')
-llm_struct_merge = ChatOllama(model=ollama_version).with_structured_output(MergedNarratives, method='json_schema')
 llm_grader = ChatOllama(model=ollama_version).with_structured_output(GradedNarrative, method='json_schema')
 
 # RETRIEVE
@@ -240,7 +239,7 @@ def grade_narrative(state: GraphState) -> GraphState:
             "grade_result": None
         })
 
-    #pending = state.pending_narratives_with_docs
+    
     pending = {str(k): v for k, v in (state.pending_narratives_with_docs or {}).items()}
 
     # Ensure topic_key is str for consistency
@@ -574,7 +573,7 @@ def run_narrative_extraction(topic_keywords: dict,
 
             # Step 4: JSON-safe output (skip non-serializable retrievers)
             try:
-                # Use Pydantic's built-in serialization and exclude retrievers
+               
                 result_dict = final_state.model_dump(
                     mode="python",
                     by_alias=False,
