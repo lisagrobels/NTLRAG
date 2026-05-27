@@ -20,7 +20,7 @@ from langchain_core.runnables.config import RunnableConfig
 from langgraph.graph import StateGraph, END
 
 
-# Setup pydantic models and graph state models
+# setup pydantic models and graph state models
 class Narrative(BaseModel):
     topic_id: str = Field(description="The topic ID of the narrative.")
     actor: str = Field(description="The actor(s) of the narrative.")
@@ -59,7 +59,7 @@ class GraphState(BaseModel):
     refine_counts: Dict[str, int] = Field(default_factory=dict)
     topic_keywords: Dict[str, list[str]] = Field(default_factory=dict)
     
-# Setup LLMs
+# setup LLMs
 llm = ChatOllama(model=ollama_version)
 llm_struct = ChatOllama(model=ollama_version).with_structured_output(Narrative, method='json_schema')
 llm_grader = ChatOllama(model=ollama_version).with_structured_output(GradedNarrative, method='json_schema')
@@ -254,7 +254,7 @@ def grade_narrative(state: GraphState) -> GraphState:
     narrative_with_docs = pending[topic_key]
     narrative = narrative_with_docs.narrative
 
-    # Log narrative fields, even if incomplete (for debugging)
+    # log narrative fields
     print(" Narrative to grade (may be partial):", narrative)
 
     docs_combined = (
@@ -264,7 +264,7 @@ def grade_narrative(state: GraphState) -> GraphState:
 
     context = "\n\n".join([get_page_content(doc) for doc in docs_combined])
 
-    # Check for missing fields before calling the LLM
+    # check for missing fields before calling the LLM
     graded = auto_grade_if_incomplete(narrative)
     if graded:
         print(f" Narrative is incomplete. Auto-graded as 'refine': {graded.explanation}")
@@ -311,7 +311,7 @@ Narrative:
             print(f" Could not parse grading result into GradedNarrative: {e}", flush=True)
             graded = None
 
-    # Copy and prep state data
+    # copy and prep state data
     approved_narratives = list(getattr(state, "approved_narratives", []))
     refine_counts = dict(getattr(state, "refine_counts", {}))
     pending_narratives_with_docs = dict(pending)
@@ -333,7 +333,7 @@ Narrative:
             refine_counts[topic_key] = refine_count
 
     else:
-        # Invalid or missing grade — still increment refine count
+        # invalid or missing grade — still increment refine count
         refine_count += 1
         print(f" Grading failed or incomplete, incrementing refine_count: {refine_count} for topic {topic_key}")
         if refine_count >= max_refines:
@@ -357,7 +357,7 @@ def refine_narrative(state: GraphState) -> GraphState:
     documents_bm25 = state.documents_bm25 or []
     documents_chroma = state.documents_chroma or []
 
-    # Include grading explanation if the last grade was 'refine'
+    # include grading explanation if the last grade was 'refine'
     explanation_text = ""
     if state.grade_result and state.grade_result.grade == Grade.refine:
         reason = state.grade_result.explanation.strip()
@@ -367,7 +367,7 @@ def refine_narrative(state: GraphState) -> GraphState:
                 f"\"{reason}\"\n\n"
             )
 
-    # Construct prompt with explanation and extraction instructions
+    # construct prompt with explanation and extraction instructions
     docs_text = "\n".join(get_page_content(doc) for doc in documents_bm25)
     combined_text = (f"""
         You are a information extraction system.
@@ -463,24 +463,24 @@ def build_graph():
 
     builder.set_entry_point("retrieve")
 
-    # Linear flow
+    # linear flow
     builder.add_edge("retrieve", "extract")
     builder.add_edge("extract", "grade")
     builder.add_edge("refine", "grade")
 
-    # Conditional routing after grading
+    # conditional routing after grading
     def route_after_grading(state: GraphState):
         grade_result = state.grade_result
         topic_key = str(state.topic_id)
         pending = state.pending_narratives_with_docs
 
-        # If narrative is approved, or no longer pending (force-approved or otherwise), we're done
+        # if narrative is approved, or no longer pending (force-approved or otherwise), we're done
         if (grade_result and grade_result.grade == Grade.approved) or \
            (not pending or topic_key not in pending):
             print(f" Narrative approved or force-approved for topic {state.topic_id}.")
             return END
 
-        # Otherwise, keep refining
+        # otherwise, keep refining
         print(f" Refining narrative for topic {state.topic_id}...")
         return "refine"
 
@@ -568,10 +568,10 @@ def run_narrative_extraction(topic_keywords: dict,
                 final_state = TypeAdapter(GraphState).validate_python(raw_state)
 
 
-            # Step 3: Extract narratives
+            # extract narratives
             approved_narratives = final_state.approved_narratives or []
 
-            # Step 4: JSON-safe output (skip non-serializable retrievers)
+            # output
             try:
                
                 result_dict = final_state.model_dump(
@@ -580,10 +580,10 @@ def run_narrative_extraction(topic_keywords: dict,
                     exclude={"bm25_retrievers", "chroma_retriever"}
                 )
 
-                # Convert NumPy types or any other non-JSON types if needed
+                # convert NumPy types or any other non-JSON types if needed
                 result_dict = convert_numpy_types(result_dict)
 
-                # Write to disk
+                # write to disk
                 with open(output_dir / f"topic_{topic_id}.json", "w") as f:
                     json.dump(result_dict, f, indent=2)
 
@@ -602,25 +602,25 @@ def run_narrative_extraction(topic_keywords: dict,
             print(f" Error processing topic {topic_id}: {e}")
             traceback.print_exc()
 
-    # Save all approved narratives globally
+    # save all approved narratives globally
     try:
         approved_path = output_dir / "approved_narratives_global.json"
 
-        # Convert each narrative to a serializable dict
+        # convert each narrative to a serializable dict
         all_approved_serializable = []
         for n in all_approved_narratives:
-            if hasattr(n, "model_dump"):  # Pydantic model
+            if hasattr(n, "model_dump"):  # pydantic model
                 all_approved_serializable.append(n.model_dump(mode="python", by_alias=False))
             elif isinstance(n, dict):
                 all_approved_serializable.append(n)
             else:
-                # Fallback: convert to string if it's something else (e.g. plain text)
+                # Fallback: convert to string
                 all_approved_serializable.append(str(n))
 
-        # Convert NumPy or other non-JSON-safe types
+        # convert NumPy or other non-JSON-safe types
         all_approved_serializable = convert_numpy_types(all_approved_serializable)
 
-        # Write to disk
+        # write to disk
         with open(approved_path, "w") as f:
             json.dump(all_approved_serializable, f, indent=2)
 
